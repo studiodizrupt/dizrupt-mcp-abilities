@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+npm-debug.log*
+
+# WordPress build artifacts
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+error_log
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Composer (not used — no composer.json — but exclude if added later)
+vendor/
