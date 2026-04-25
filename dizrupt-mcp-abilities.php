@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'DIZRUPT_MCP_VERSION', '1.0.0' );
 define( 'DIZRUPT_MCP_DIR', plugin_dir_path( __FILE__ ) );
+define( 'DIZRUPT_MCP_URL', plugin_dir_url( __FILE__ ) );
 
 // ─── Dependency check ────────────────────────────────────────────────────────
 
@@ -123,6 +124,20 @@ add_action( 'wp_abilities_api_init', function () {
 	require_once DIZRUPT_MCP_DIR . 'includes/abilities-discovery.php';
 	require_once DIZRUPT_MCP_DIR . 'includes/abilities-gutenberg.php';
 } );
+
+// ─── OAuth 2.1 Server ─────────────────────────────────────────────────────────
+
+require_once DIZRUPT_MCP_DIR . 'includes/oauth/class-dizrupt-oauth-db.php';
+require_once DIZRUPT_MCP_DIR . 'includes/oauth/class-dizrupt-oauth-server.php';
+require_once DIZRUPT_MCP_DIR . 'includes/oauth/class-dizrupt-oauth-authorize.php';
+require_once DIZRUPT_MCP_DIR . 'includes/oauth/class-dizrupt-oauth-token.php';
+require_once DIZRUPT_MCP_DIR . 'includes/oauth/class-dizrupt-oauth-interceptor.php';
+
+Dizrupt_OAuth_Server::init();
+
+register_activation_hook( __FILE__, array( 'Dizrupt_OAuth_DB', 'create_tables' ) );
+
+add_action( 'plugins_loaded', array( 'Dizrupt_OAuth_DB', 'maybe_upgrade' ) );
 
 // ─── Shared utility functions ─────────────────────────────────────────────────
 

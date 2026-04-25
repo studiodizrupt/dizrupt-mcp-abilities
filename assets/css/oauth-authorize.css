@@ -1,0 +1,139 @@
+/**
+ * OAuth 2.1 Authorization Page Styles.
+ *
+ * @package dizrupt-mcp-abilities
+ */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background: #f0f0f1;
+	color: #1d2327;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 20px;
+}
+
+.dizrupt-oauth-card {
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	max-width: 440px;
+	width: 100%;
+	padding: 32px;
+}
+
+.dizrupt-oauth-header {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.dizrupt-oauth-header img {
+	width: 64px;
+	height: 64px;
+	border-radius: 8px;
+	margin-bottom: 12px;
+}
+
+.dizrupt-oauth-header h1 {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.dizrupt-oauth-header p {
+	color: #646970;
+	font-size: 14px;
+}
+
+.dizrupt-oauth-scopes {
+	background: #f6f7f7;
+	border-radius: 6px;
+	padding: 16px;
+	margin-bottom: 24px;
+}
+
+.dizrupt-oauth-scopes h3 {
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	color: #646970;
+	margin-bottom: 10px;
+}
+
+.dizrupt-oauth-scopes ul {
+	list-style: none;
+	padding: 0;
+}
+
+.dizrupt-oauth-scopes li {
+	padding: 6px 0;
+	font-size: 14px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.dizrupt-oauth-scopes li:last-child {
+	border-bottom: none;
+}
+
+.dizrupt-oauth-scopes li::before {
+	content: "\2713";
+	color: #00a32a;
+	font-weight: bold;
+	margin-right: 8px;
+}
+
+.dizrupt-oauth-user {
+	font-size: 13px;
+	color: #646970;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.dizrupt-oauth-user strong {
+	color: #1d2327;
+}
+
+.dizrupt-oauth-actions {
+	display: flex;
+	gap: 12px;
+}
+
+.dizrupt-oauth-actions button {
+	flex: 1;
+	padding: 10px 16px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	border: 1px solid;
+	transition: background .15s;
+}
+
+.dizrupt-oauth-btn-deny {
+	background: #fff;
+	border-color: #c3c4c7;
+	color: #50575e;
+}
+
+.dizrupt-oauth-btn-deny:hover {
+	background: #f6f7f7;
+}
+
+.dizrupt-oauth-btn-authorize {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+}
+
+.dizrupt-oauth-btn-authorize:hover {
+	background: #135e96;
+}
